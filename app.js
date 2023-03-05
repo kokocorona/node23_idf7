@@ -18,7 +18,7 @@ app.use(fileUpload({
 app.use(express.json());
 
 // דואג שתקיית פאבליק כל הקבצים בה יהיו חשופים לצד לקוח
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,"public"))); 
 
 // פונקציה שמגדירה את כל הראוטים הזמנים באפליקציית
 // צד שרת שלנו
