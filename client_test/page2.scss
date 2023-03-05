@@ -1,0 +1,19 @@
+$green:rgb(22, 180, 22);
+$blue:rgb(22, 145, 228);
+
+@mixin neonText($color){
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px $color, 0 0 30px $color, 0 0 40px $color, 0 0 55px $color, 0 0 75px $color;
+}
+
+@mixin createSquare($px,$isCircle:false){
+  width:$px; 
+  height: $px; 
+  // תנאי
+  @if $isCircle == true{ 
+    border-radius: 50%;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

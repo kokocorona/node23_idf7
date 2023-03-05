@@ -1,0 +1,84 @@
+@import "page2";
+
+$gold: rgb(253, 230, 95);
+$red:rgb(235, 90, 23);
+
+
+*{
+  margin:0;
+  box-sizing: border-box;
+}
+
+.my-btn{
+  background: grey;
+  border: none;
+  padding:8px 32px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 1000ms;
+}
+
+.my-btn:hover{
+  transform: scale(1.2);
+}
+
+body{
+  background:silver;
+  font-family: sans-serif;
+}
+
+
+
+// @mixin -> הכרזת פונקציה עם בסאס
+@mixin createBox($pad,$border,$bg:aqua){
+  padding:$pad;
+  border:$border;
+  background: $bg;
+}
+
+.container{
+  max-width: 900px;
+  background: white;
+  // background: $gold;
+  margin:0 auto;
+  padding:8px;
+
+  button{
+    // @extend -> מעתיק את המאפיינים מהסלקטור
+    @extend .my-btn;
+    background: greenyellow;
+  }
+ 
+  h1{
+    // @include -> מאפשר לזמן פונקציה שהגדרנו עם 
+    @include neonText(orange);
+    color:white;
+    margin-bottom: 16px;
+  }
+
+  h4{
+    // @include -> מאפשר לזמן פונקציה שהגדרנו עם 
+    @include createSquare(100px,false);   
+    background: aqua; 
+  }
+
+  p{
+    // @include -> מאפשר לזמן פונקציה שהגדרנו עם 
+    // MIXIN
+    @include createBox(20px, 4px solid black);
+
+  }
+
+  section{
+    h2{
+      color:greenyellow;
+      margin:16px 0;
+    }
+
+    h3{
+      color:$blue;
+      background: $gold;
+    }
+  }
+}
+

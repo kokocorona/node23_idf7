@@ -87,7 +87,8 @@ router.get("/single/:id", async(req,res) => {
 router.post("/groupsApp" , async(req,res) => {
   try{
     // ids -> יכיל מערך של איי דיים של אפליקציות שנרצה לשלוף
-    let data = await GamesAppsModel.find({"_id":{$in:req.body.ids}}).limit(10)
+    // $in -> פקודה שיודעת לשלוף מספר רשומות לפי מאפיין, כאשר מעבירים מערך של כל הערכים שתואמים למאפיין שישלפו
+    let data = await GamesAppsModel.find({"_id":{$in:req.body.ids}}).limit(20)
     // let data = await GamesAppsModel.find({"_id":{$in:["63b14e328974ec3b2dcf69b3","63d65624c24faca5c6721a43"]}})
     res.json(data);
   }
